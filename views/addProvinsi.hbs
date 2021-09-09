@@ -1,0 +1,43 @@
+{{>header}}
+{{#if message}}
+  <div class="alert alert-{{message.type}}" role="alert">
+    {{message.message}}
+  </div>
+{{/if}}
+{{>navbar}}
+
+<div class="container mt-5 mb-5">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-md-6">
+                <form action="/addProvinsi" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label class="form-label text-light">Nama</label>
+                    <input type="text" class="form-control" name="nama">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">photo</label>
+                    <input type="file" id="file" onchange="handleChange()" class="form-control" name="image">
+                    <div id="preview-cover"></div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label text-light">diresmikan tanggal</label>
+                    <input type="date" class="form-control" name="tanggal">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success mt-4 signup " type="submit">Tambah data</button>
+                </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+<script>
+  function handleChange(){
+    const previewElement = document.getElementById('preview-cover');
+    const value = URL.createObjectURL(event.target.files[0]);
+    console.log(value);
+    previewElement.innerHTML = `<img src="${value}" style="width: 150px;" class="mt-3"/>`
+  }
+</script>
+
+{{>footer}}

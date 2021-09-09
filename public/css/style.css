@@ -1,0 +1,22 @@
+body {
+  background-color: black;
+}
+
+#provinsi {
+  background-color: blue;
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+#kabupaten {
+  background-color: blue;
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+}
+.card {
+  margin: auto;
+}
